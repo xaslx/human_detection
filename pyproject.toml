@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "opencv-project"
+version = "0.1.0"
+description = ""
+authors = ["Maksim <knyazev.maksim2852@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.10.6"
+opencv-python = "^4.11.0.86"
+mediapipe = "^0.10.21"
+dishka = "^1.4.2"
+fastapi = "^0.115.8"
+uvicorn = "^0.34.0"
+pydantic-settings = "^2.7.1"
+sse-starlette = "^2.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

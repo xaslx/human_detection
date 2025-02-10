@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photos</title>
+  <style>
+    #messages {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    #messages img {
+      max-width: 30%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Photos</h1>
+  <div id="messages"></div>
+  <script>
+    const eventSource = new EventSource('/events');
+    eventSource.onmessage = function(event) {
+      const messagesDiv = document.getElementById('messages');
+
+      const img = document.createElement('img');
+      img.src = event.data;
+      img.alt = "Новое фото";
+      messagesDiv.appendChild(img);
+    };
+  </script>
+</body>
+</html>
